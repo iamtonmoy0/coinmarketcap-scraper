@@ -25,7 +25,7 @@ func main() {
 	// initialize colly
 	c := colly.NewCollector()
 
-	c.OnHTML("table tbody", func(e *colly.HTMLElement) {
+	c.OnHTML(".inner-scroll table tbody ", func(e *colly.HTMLElement) {
 		writer.Write([]string{
 			e.ChildText("tr>td:nth-child(2)>a"),
 			e.ChildText("tr>td:nth-child(3)"),
