@@ -1,1 +1,1 @@
-### coinmarketcap scraper
+### Stock market scraper
