@@ -34,9 +34,13 @@ func main() {
 			writer.Write([]string{result})
 		}
 	})
-
+	// on request
 	c.OnRequest(func(r *colly.Request) {
 		fmt.Println("Visiting", r.URL.String())
+	})
+	// on error
+	c.OnError(func(e *colly.Response, err error) {
+		fmt.Println("something went wrong", err)
 	})
 
 	c.Visit("https://coinmarketcap.com/all/views/all/")
